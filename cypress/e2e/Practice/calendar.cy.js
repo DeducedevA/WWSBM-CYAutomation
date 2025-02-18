@@ -4,9 +4,9 @@ describe('Calendar test',()=>
 
     it('Verify date selection',()=>{
 
-        const monthNumber = "6";
+        const monthNumber = "1";
         const date = "15";
-        const year = "2027";
+        const year = "2025";
         const expectedList = [monthNumber,date,year];
 
         cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/offers");

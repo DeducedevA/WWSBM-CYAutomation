@@ -52,7 +52,7 @@ describe('Login Test Suite', () => {
 
     // Wait for the page to respond (replace with a better approach if applicable)
     cy.wait(3000);
-    cy.screenshot();
+    
   });
 
 
