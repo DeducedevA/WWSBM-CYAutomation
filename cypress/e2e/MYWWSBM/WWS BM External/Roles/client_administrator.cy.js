@@ -42,40 +42,40 @@ describe('MYWWSBM External Client dministrator', function () {
 
     beforeEach(function () {
         // Load credentials from the fixture
-        cy.fixture('mywwsbm_external').then((mywwsbm_external) => {
-            this.mywwsbm_external = mywwsbm_external;
+        cy.fixture('mywwsbm_data').then((mywwsbm_data) => {
+            this.mywwsbm_data = mywwsbm_data;
         });
     });
 
-    it('Home', function () {
+    it('Home', function () { 
 
         // URL
-        link.Link(this.mywwsbm_external.External_URL);
+        link.Link(this.mywwsbm_data.External_URL);
 
         // Login details
-        loginPage.login(this.mywwsbm_external.CA_username, this.mywwsbm_external.CA_password);
-        loginPage.homepage(this.mywwsbm_external.home); // home navigations
+        loginPage.login(this.mywwsbm_data.CA_username, this.mywwsbm_data.CA_password);
+        loginPage.homepage(this.mywwsbm_data.home); // home navigations
 
-        loginPage.GlobalSearch(this.mywwsbm_external.Patient_name); //Global Search
-        loginPage.Filters(this.mywwsbm_external.Start_Date, this.mywwsbm_external.End_Date, this.mywwsbm_external.DeliveredOn,
-            this.mywwsbm_external.Internal_FTP, this.mywwsbm_external.Caller, this.mywwsbm_external.Verifier);
+        loginPage.GlobalSearch(this.mywwsbm_data.Patient_name); //Global Search
+        loginPage.Filters(this.mywwsbm_data.Start_Date, this.mywwsbm_data.End_Date, this.mywwsbm_data.DeliveredOn,
+            this.mywwsbm_data.Internal_FTP, this.mywwsbm_data.Caller, this.mywwsbm_data.Verifier);
 
     });
 
     it('Dashboard', function () {
 
         // URL
-        link.Link(this.mywwsbm_external.External_URL);
+        link.Link(this.mywwsbm_data.External_URL);
 
         // Login details
-        loginPage.login(this.mywwsbm_external.CA_username, this.mywwsbm_external.CA_password);
+        loginPage.login(this.mywwsbm_data.CA_username, this.mywwsbm_data.CA_password);
 
         // Dashboard
-        dashboard.dashboard(this.mywwsbm_external.dashboard); //Dasboard Navigation
-        dashboard.date_range(this.mywwsbm_external.Start_Date, this.mywwsbm_external.End_Date); //Date Range
-        dashboard.filters(this.mywwsbm_external.State, this.mywwsbm_external.Product, this.mywwsbm_external.Status, this.mywwsbm_external.Insurance,
-            this.mywwsbm_external.DeliveredOn, this.mywwsbm_external.Subsequent_VF, this.mywwsbm_external.Internal_FTP); //Dashboard Filters
-        dashboard.Generate_Report(this.mywwsbm_external.Generate_Report, this.mywwsbm_external.fileName) //Generate Reports
+        dashboard.dashboard(this.mywwsbm_data.dashboard); //Dasboard Navigation
+        dashboard.date_range(this.mywwsbm_data.Start_Date, this.mywwsbm_data.End_Date); //Date Range
+        dashboard.filters(this.mywwsbm_data.State, this.mywwsbm_data.Product, this.mywwsbm_data.Status, this.mywwsbm_data.Insurance,
+            this.mywwsbm_data.DeliveredOn, this.mywwsbm_data.Subsequent_VF, this.mywwsbm_data.Internal_FTP); //Dashboard Filters
+        dashboard.Generate_Report(this.mywwsbm_data.Generate_Report, this.mywwsbm_data.fileName) //Generate Reports
 
 
     });
@@ -83,17 +83,17 @@ describe('MYWWSBM External Client dministrator', function () {
     it('Eligibility and Benefits (Data Groups)', function () {
 
         // URL
-        link.Link(this.mywwsbm_external.External_URL);
+        link.Link(this.mywwsbm_data.External_URL);
 
         // Login Details
-        loginPage.login(this.mywwsbm_external.CA_username, this.mywwsbm_external.CA_password);
+        loginPage.login(this.mywwsbm_data.CA_username, this.mywwsbm_data.CA_password);
 
         // sidebar Navigation to Data groups
-        datagroups.datagroups(this.mywwsbm_external.EB, this.mywwsbm_external.Data_Groups);
-        datagroups.searchbar(this.mywwsbm_external.DataGroup_ID);  // Top Searchbar
+        datagroups.datagroups(this.mywwsbm_data.EB, this.mywwsbm_data.Data_Groups);
+        datagroups.searchbar(this.mywwsbm_data.DataGroup_ID);  // Top Searchbar
         datagroups.DGfilters();  // filters
         datagroups.chart();  //chart
-        datagroups.chartDownload(this.mywwsbm_external.Download_Chart, this.mywwsbm_external.fileName);  // Chart Download
+        datagroups.chartDownload(this.mywwsbm_data.Download_Chart, this.mywwsbm_data.fileName);  // Chart Download
         datagroups.CHfilters();  //Chart Filter
 
     });
@@ -101,15 +101,15 @@ describe('MYWWSBM External Client dministrator', function () {
     it('Eligibility and Benefits (Chart Insights)', function () {
 
         // URL
-        link.Link(this.mywwsbm_external.External_URL);
+        link.Link(this.mywwsbm_data.External_URL);
 
         // Login Details
-        loginPage.login(this.mywwsbm_external.CA_username, this.mywwsbm_external.CA_password);
+        loginPage.login(this.mywwsbm_data.CA_username, this.mywwsbm_data.CA_password);
 
-        chartinsights.chartinsights(this.mywwsbm_external.EB, this.mywwsbm_external.Charts_Insights); // Chart Insight Navigation
+        chartinsights.chartinsights(this.mywwsbm_data.EB, this.mywwsbm_data.Charts_Insights); // Chart Insight Navigation
         chartinsights.CIfilters(); // filters
         chartinsights.chart(); //chart open
-        datagroups.chartDownload(this.mywwsbm_external.Download_Chart, this.mywwsbm_external.fileName);  // Chart Download
+        datagroups.chartDownload(this.mywwsbm_data.Download_Chart, this.mywwsbm_data.fileName);  // Chart Download
         datagroups.CHfilters();  //Chart Filter
 
     });
@@ -117,29 +117,29 @@ describe('MYWWSBM External Client dministrator', function () {
     it('Eligibility and Benefits (All Chart View)', function () {
 
         //     URL
-        link.Link(this.mywwsbm_external.External_URL);
+        link.Link(this.mywwsbm_data.External_URL);
 
         // Login Details
-        loginPage.login(this.mywwsbm_external.CA_username, this.mywwsbm_external.CA_password);
-        allchartview.AllChartView(this.mywwsbm_external.EB, this.mywwsbm_external.AllCharts_View); //All Chart View Navigation
-        allchartview.PatientSearch(this.mywwsbm_external.Patient_name); // PAtient Search by name
-        allchartview.filters(this.mywwsbm_external.AllCharts_View); //Filters
+        loginPage.login(this.mywwsbm_data.CA_username, this.mywwsbm_data.CA_password);
+        allchartview.AllChartView(this.mywwsbm_data.EB, this.mywwsbm_data.AllCharts_View); //All Chart View Navigation
+        allchartview.PatientSearch(this.mywwsbm_data.Patient_name); // PAtient Search by name
+        allchartview.filters(this.mywwsbm_data.AllCharts_View); //Filters
         allchartview.charts(); //open charts
-        allchartview.ChartDownload(this.mywwsbm_external.Download_Chart, this.mywwsbm_external.fileName);
+        allchartview.ChartDownload(this.mywwsbm_data.Download_Chart, this.mywwsbm_data.fileName);
 
     });
 
     it('Settings ( User Directory)', function () {
 
         //URL
-        link.Link(this.mywwsbm_external.External_URL);
+        link.Link(this.mywwsbm_data.External_URL);
 
-        loginPage.login(this.mywwsbm_external.CA_username, this.mywwsbm_external.CA_password);  // Login Details
-        userdirectory.UserDirectory(this.mywwsbm_external.Settings, this.mywwsbm_external.User_Directory); // user directory navigation
-        userdirectory.UserCreate(this.mywwsbm_external.F_name, this.mywwsbm_external.L_name, this.mywwsbm_external.email,
-            this.mywwsbm_external.CA_password, this.mywwsbm_external.Test, this.mywwsbm_external.Phone_Num); //create user
-        userdirectory.SearchBar(this.mywwsbm_external.F_name); // Search user
-        userdirectory.EditUser(this.mywwsbm_external.Test); //Edit USer
+        loginPage.login(this.mywwsbm_data.CA_username, this.mywwsbm_data.CA_password);  // Login Details
+        userdirectory.UserDirectory(this.mywwsbm_data.Settings, this.mywwsbm_data.User_Directory); // user directory navigation
+        userdirectory.UserCreate(this.mywwsbm_data.F_name, this.mywwsbm_data.L_name, this.mywwsbm_data.email,
+            this.mywwsbm_data.CA_password, this.mywwsbm_data.Test, this.mywwsbm_data.Phone_Num); //create user
+        userdirectory.SearchBar(this.mywwsbm_data.F_name); // Search user
+        userdirectory.EditUser(this.mywwsbm_data.Test); //Edit USer
         userdirectory.DeleteUser(); //Delete User
 
     });
@@ -147,84 +147,84 @@ describe('MYWWSBM External Client dministrator', function () {
     it('Settings (Notifications)', function () {
 
         //URL
-        link.Link(this.mywwsbm_external.External_URL);
+        link.Link(this.mywwsbm_data.External_URL);
 
-        loginPage.login(this.mywwsbm_external.CA_username, this.mywwsbm_external.CA_password);  // Login Details
-        notifications.Notification(this.mywwsbm_external.Settings, this.mywwsbm_external.Notifications)
-        notifications.SearchBar(this.mywwsbm_external.TopSearchBar);
+        loginPage.login(this.mywwsbm_data.CA_username, this.mywwsbm_data.CA_password);  // Login Details
+        notifications.Notification(this.mywwsbm_data.Settings, this.mywwsbm_data.Notifications)
+        notifications.SearchBar(this.mywwsbm_data.TopSearchBar);
         notifications.Status();
-        notifications.DateRange(this.mywwsbm_external.startDate_Nofo, this.mywwsbm_external.endDate_Nofo);
+        notifications.DateRange(this.mywwsbm_data.startDate_Nofo, this.mywwsbm_data.endDate_Nofo);
 
     });
 
     it('Settings (Payer Exclusion List)', function () {
 
         // URL
-        link.Link(this.mywwsbm_external.External_URL);
+        link.Link(this.mywwsbm_data.External_URL);
 
-        loginPage.login(this.mywwsbm_external.CA_username, this.mywwsbm_external.CA_password); //login details
-        exclusionlist.ExclusionList(this.mywwsbm_external.Settings, this.mywwsbm_external.PayerExclusionList); //Exclusion List Navigation
+        loginPage.login(this.mywwsbm_data.CA_username, this.mywwsbm_data.CA_password); //login details
+        exclusionlist.ExclusionList(this.mywwsbm_data.Settings, this.mywwsbm_data.PayerExclusionList); //Exclusion List Navigation
         exclusionlist.Download();
     });
 
     it('Settings (Report Repository)', function () {
 
         // URL
-        link.Link(this.mywwsbm_external.External_URL);
+        link.Link(this.mywwsbm_data.External_URL);
 
-        loginPage.login(this.mywwsbm_external.CA_username, this.mywwsbm_external.CA_password); // Login Details
-        reportrepo.ReportRepo(this.mywwsbm_external.Settings, this.mywwsbm_external.Report_Repository);
-        reportrepo.MonthlyReport(this.mywwsbm_external.FileName, this.mywwsbm_external.OK, this.mywwsbm_external.Confirm);
-        reportrepo.WeeklyReport(this.mywwsbm_external.FileName, this.mywwsbm_external.OK, this.mywwsbm_external.Confirm);
-        reportrepo.DailyReport(this.mywwsbm_external.RepoDate1, this.mywwsbm_external.RepoDate2, this.mywwsbm_external.FileName, this.mywwsbm_external.OK, this.mywwsbm_external.Confirm);
-        // reportrepo.ManageReports(this.mywwsbm_external.Test);
+        loginPage.login(this.mywwsbm_data.CA_username, this.mywwsbm_data.CA_password); // Login Details
+        reportrepo.ReportRepo(this.mywwsbm_data.Settings, this.mywwsbm_data.Report_Repository);
+        reportrepo.MonthlyReport(this.mywwsbm_data.FileName, this.mywwsbm_data.OK, this.mywwsbm_data.Confirm);
+        reportrepo.WeeklyReport(this.mywwsbm_data.FileName, this.mywwsbm_data.OK, this.mywwsbm_data.Confirm);
+        reportrepo.DailyReport(this.mywwsbm_data.RepoDate1, this.mywwsbm_data.RepoDate2, this.mywwsbm_data.FileName, this.mywwsbm_data.OK, this.mywwsbm_data.Confirm);
+        // reportrepo.ManageReports(this.mywwsbm_data.Test);
 
     });
 
     it('Settings (Edit Profile)', function () {
 
         //URL
-        link.Link(this.mywwsbm_external.External_URL);
+        link.Link(this.mywwsbm_data.External_URL);
 
 
-        loginPage.login(this.mywwsbm_external.CA_username, this.mywwsbm_external.CA_password); // Login Details
-        editprofile.EditProfile(this.mywwsbm_external.Settings, this.mywwsbm_external.Edit_Profile); //edit profile navigation
-        editprofile.EditName(this.mywwsbm_external.F_name, this.mywwsbm_external.L_name);
+        loginPage.login(this.mywwsbm_data.CA_username, this.mywwsbm_data.CA_password); // Login Details
+        editprofile.EditProfile(this.mywwsbm_data.Settings, this.mywwsbm_data.Edit_Profile); //edit profile navigation
+        editprofile.EditName(this.mywwsbm_data.F_name, this.mywwsbm_data.L_name);
         editprofile.EditToggle();
-        editprofile.ChangePassword(this.mywwsbm_external.CA_password);
+        editprofile.ChangePassword(this.mywwsbm_data.CA_password);
 
     });
 
     it('Settings (Recent History)', function () {
 
         //URL
-        link.Link(this.mywwsbm_external.External_URL);
+        link.Link(this.mywwsbm_data.External_URL);
 
-        loginPage.login(this.mywwsbm_external.CA_username, this.mywwsbm_external.CA_password);  // Login Details 
-        recenthistory.RecentHistory(this.mywwsbm_external.Settings, this.mywwsbm_external.Recent_History); // recent history navigation
+        loginPage.login(this.mywwsbm_data.CA_username, this.mywwsbm_data.CA_password);  // Login Details 
+        recenthistory.RecentHistory(this.mywwsbm_data.Settings, this.mywwsbm_data.Recent_History); // recent history navigation
         recenthistory.Chart(); //view chart
-        recenthistory.Filters(this.mywwsbm_external.Patient_name, this.mywwsbm_external.startDate_Nofo, this.mywwsbm_external.Primary_InsuranceNUM,
-            this.mywwsbm_external.Primary_Insurance, this.mywwsbm_external.Chart_Status); //filters
+        recenthistory.Filters(this.mywwsbm_data.Patient_name, this.mywwsbm_data.startDate_Nofo, this.mywwsbm_data.Primary_InsuranceNUM,
+            this.mywwsbm_data.Primary_Insurance, this.mywwsbm_data.Chart_Status); //filters
     });
 
     it('Tools (Payment Calculator)', function () {
 
         //URL
-        link.Link(this.mywwsbm_external.External_URL);
-        loginPage.login(this.mywwsbm_external.CA_username, this.mywwsbm_external.CA_password);  // Login Details 
-        paymentcalc.PaymentCalc(this.mywwsbm_external.Tools, this.mywwsbm_external.PaymentCalc); // PaymentCalc navigation
-        paymentcalc.Form(this.mywwsbm_external.Num1, this.mywwsbm_external.Num2); // calc fields
+        link.Link(this.mywwsbm_data.External_URL);
+        loginPage.login(this.mywwsbm_data.CA_username, this.mywwsbm_data.CA_password);  // Login Details 
+        paymentcalc.PaymentCalc(this.mywwsbm_data.Tools, this.mywwsbm_data.PaymentCalc); // PaymentCalc navigation
+        paymentcalc.Form(this.mywwsbm_data.Num1, this.mywwsbm_data.Num2); // calc fields
 
     });
 
     it('Tools (NPI Validation)', function () {
 
         //URL
-        link.Link(this.mywwsbm_external.External_URL);
+        link.Link(this.mywwsbm_data.External_URL);
 
-        loginPage.login(this.mywwsbm_external.CA_username, this.mywwsbm_external.CA_password);  // Login Details 
-        NPIvalidation.NPIValidation(this.mywwsbm_external.Tools, this.mywwsbm_external.NPI_nav); //NPI navigation
-        NPIvalidation.NPI(this.mywwsbm_external.NPI_num); // Npi validation
+        loginPage.login(this.mywwsbm_data.CA_username, this.mywwsbm_data.CA_password);  // Login Details 
+        NPIvalidation.NPIValidation(this.mywwsbm_data.Tools, this.mywwsbm_data.NPI_nav); //NPI navigation
+        NPIvalidation.NPI(this.mywwsbm_extermywwsbm_datanal.NPI_num); // Npi validation
         NPIvalidation.Download(); // Download physician details
 
     });

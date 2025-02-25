@@ -1,5 +1,16 @@
 {
     "External_URL" : "https://testing.mywwsbm.com/",
+
+    "Internal_URL" : "https://testing.mywwsbm.com/internal",
+
+    "SA_username" : "sa.stt@mywwsbm.com",
+    "SA_passowrd" : "Wonderwsbm@24",
+
+    "VF_username" : "wwsxpropellerr@gmail.com",
+    "VF_password" : "XPROwws@123",
+
+    "caller_username" : "xpropellerwws@gmail.com",
+    "caller_password" : "XPROwws@123",
    
     "CA_username": "wit.wonderone@gmail.com",
     "CA_password" : "Test@123",
@@ -9,6 +20,11 @@
 
     "VV_username" : "witwonderthree@gmail.com",
     "VV_password" : "Test@123",
+
+    "facility" : "Test Facility 2",
+    "SA_role" : "System Administrator",
+    "VF_role" : "E&B Data Integrity Specialist",
+    "caller_role": "E&B Caller & Data Integrity Specialist",
 
     "home" : "Home",
     "Patient_searchNav" : "Search By Patient",
