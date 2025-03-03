@@ -74,11 +74,14 @@ describe('MYWWSBM External Client dministrator', function () {
           // sidebar Navigation to Data groups
         datagroups.datagroups(this.mywwsbm_data.EB, this.mywwsbm_data.Data_Groups);
         datagroups.searchbar(this.mywwsbm_data.DataGroup_ID);  // Top Searchbar
+        datagroups.ChartAssign(this.mywwsbm_data.upload_button, this.mywwsbm_data.facility, this.mywwsbm_data.VFfile_name, this.mywwsbm_data.VF_assign, this.mywwsbm_data.split, this.mywwsbm_data.VF_user, this.mywwsbm_data.Re_assign, this.mywwsbm_data.VF_reassign);
+        datagroups.DGactions(this.mywwsbm_data.Download, this.mywwsbm_data.Delete);  //actions
         datagroups.DGfilters();  // filters
-        datagroups.chart();  //chart
-        datagroups.chartDownload(this.mywwsbm_data.Download_Chart, this.mywwsbm_data.fileName);  // Chart Download
-        datagroups.CHfilters();  //Chart Filter
-
+        datagroups.chart(this.mywwsbm_data.releatedDoc);  //chart
+        datagroups.CHfilters(this.mywwsbm_data.OK);  //Chart Filter
+        datagroups.docUpload(this.mywwsbm_data.Doc_upload, this.mywwsbm_data.releatedDoc, this.mywwsbm_data.Delete);  // Document Upload
+       datagroups.chartDownload(this.mywwsbm_data.Download_Chart, this.mywwsbm_data.fileName);  // Chart Download
+        
 
         });
 });

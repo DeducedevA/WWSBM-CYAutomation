@@ -1,4 +1,8 @@
 {
+    "VFfile_name" : "vf4.xlsx",
+    "CLfile_name" : "cl7.xlsx",
+    "releatedDoc" : "releatedDoc.pdf",
+    
     "External_URL" : "https://testing.mywwsbm.com/",
 
     "Internal_URL" : "https://testing.mywwsbm.com/internal",
@@ -35,7 +39,6 @@
 
     "Start_Date" : "01/01/2025",
     "End_Date" : "01/29/2025",
-
     
     "State" : "ALABAMA",
     "Product" : "BREAST PUMP",
@@ -101,7 +104,22 @@
     "Confirm" : "Confirm Schedule",
 
     "Caller" : "EB Caller Data Integrity Specialist",
-    "Verifier" : "EB Data Integrity Specialist"
+    "Verifier" : "EB Data Integrity Specialist",
+
+    "upload_button" : "Import Data for Verification",
+
+    "VF_assign" : "Verification Assign",
+    "split" : "Assign by Split",
+    "VF_user" : "EB Data Integrity Specialist",
+
+    "Re_assign" : "Chart Reassignment",
+    "VF_reassign": "Verification Reassignment",
+
+    "Download" : "Download",
+    "Delete" : "Delete",
+
+    "Doc_upload" : "Upload/View Doc's"
+    
 
    
 
